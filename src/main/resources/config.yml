@@ -1,0 +1,53 @@
+# CDisc-API. Needs CDisc and a voice chat plugin (Simple Voice Chat or Plasmo Voice).
+# Whether queued discs are locked or real is CDisc's own api.allow-discs-in-queue setting.
+
+defaults:
+  # Blocks a sound carries when the command or plugin does not say. 0 = CDisc's jukebox distance.
+  distance: 0
+  # 0-200, 100 = the track as it is. -1 = CDisc's own "volume" setting.
+  volume: -1
+
+limits:
+  # Most API sounds playing at once; further requests are refused. 0 = no limit.
+  max-sounds: 64
+  # Loudest volume a command or plugin may ask for.
+  max-volume: 200
+  # Farthest distance a command or plugin may ask for, in blocks.
+  max-distance: 256
+  # Seconds a sound may spend loading before it is given up.
+  load-timeout: 30
+
+messages:
+  prefix: "&8[&dCDisc-API&8] &7"
+  no-permission: "&cYou do not have permission for that."
+  no-voice: "&cNo voice chat plugin is running, so CDisc cannot play anything."
+  unknown-sound: "&cNo sound with the id &f%s&c."
+  unknown-player: "&cNo player or entity matches &f%s&c."
+  bad-number: "&f%s &cis not a number."
+  bad-location: "&f%s &cis not a location. Use x,y,z or x,y,z,world."
+  bad-time: "&f%s &cis not a time. Use 90, 1:30 or +10 / -10."
+  not-jukebox: "&cThere is no jukebox at &f%s&c."
+  limit: "&cToo many sounds are playing already (%d)."
+  needs-target: "&cName a player, or give at=x,y,z,world from the console."
+  target-conflict: "&ctarget= next to a player picks who hears it, so it goes without at= and public=true."
+  unexpected: "&cDid not understand &f%s&c. Quote a source with spaces: \"yt:song name\"."
+  usage: "&cUsage: &f/cdisc-api %s"
+  refused: "&cRefused: &f%s&c."
+  loading: "Loading &f%s&7 as &f%s&7..."
+  loading-many: "Loading &f%s&7 for &f%d&7 listeners..."
+  started: "&aPlaying &f%s &7(&f%s&7)."
+  failed: "&c%s &7could not play: &f%s&7."
+  stopped: "Stopped &f%d &7sound(s)."
+  done: "Done."
+  reloaded: "Configuration reloaded."
+  none: "Nothing is playing."
+  queue-added: "&aQueued &f%d&a track(s) from &f%s&a."
+  queue-empty: "The queue is empty."
+  queue-failed: "&cCould not queue &f%s&c: &f%s&7."
+  queue-removed: "Removed slot &f%d&7."
+  queue-cleared: "Cleared &f%d&7 slot(s)."
+  queue-nothing: "&cNothing in slot &f%d&c."
+  disc-given: "&aGave &f%s &aa disc of &f%s&a."
+  disc-failed: "&cCould not make a disc of &f%s&c: &f%s&7."
+  gui-opened: "Opened &f%s&7 for &f%d&7 player(s)."
+  cdisc-reloaded: "CDisc reloaded."

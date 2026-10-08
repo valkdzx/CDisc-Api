@@ -1,0 +1,8 @@
+# JitPack builds the add-on for plugins that use its Java API.
+# Its image ships a broken mvn, so the SDKMAN one is called by its full path.
+jdk:
+  - openjdk21
+before_install:
+  - sdk install maven 3.9.9
+install:
+  - $HOME/.sdkman/candidates/maven/3.9.9/bin/mvn -B -ntp -DskipTests install

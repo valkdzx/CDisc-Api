@@ -1,0 +1,54 @@
+name: CDisc-API
+version: ${project.version}
+main: dev.valkdz.cdiscapi.CDiscApiPlugin
+api-version: 1.20
+folia-supported: true
+author: valkdz
+description: Commands and a Java API that drive CDisc playback.
+depend: [CDisc]
+commands:
+  cdisc-api:
+    description: Play and control CDisc audio.
+    usage: /<command> help
+    aliases: [cdapi]
+permissions:
+  cdisc.api.*:
+    description: Every /cdisc-api subcommand.
+    default: op
+    children:
+      cdisc.api.playsound: true
+      cdisc.api.control: true
+      cdisc.api.list: true
+      cdisc.api.jukebox: true
+      cdisc.api.queue: true
+      cdisc.api.gui: true
+      cdisc.api.disc: true
+      cdisc.api.prefs: true
+      cdisc.api.reload: true
+  cdisc.api.playsound:
+    description: /cdisc-api playsound
+    default: op
+  cdisc.api.control:
+    description: stop, pause, resume, volume, distance, seek, loop, move
+    default: op
+  cdisc.api.list:
+    description: list, info, jukeboxes, local
+    default: op
+  cdisc.api.jukebox:
+    description: /cdisc-api jukebox
+    default: op
+  cdisc.api.queue:
+    description: /cdisc-api queue
+    default: op
+  cdisc.api.gui:
+    description: /cdisc-api gui
+    default: op
+  cdisc.api.disc:
+    description: /cdisc-api disc, which hands out real disc items
+    default: op
+  cdisc.api.prefs:
+    description: /cdisc-api prefs
+    default: op
+  cdisc.api.reload:
+    description: /cdisc-api reload, and reload cdisc
+    default: op
