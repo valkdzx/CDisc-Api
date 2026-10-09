@@ -151,9 +151,6 @@ Build the jar (below), `mvn install` it, and add it as a `provided` dependency:
 </dependency>
 ```
 
-`jitpack.yml` is in place, so once this repository is public, JitPack serves it as
-`com.github.valkdzx:cdisc-api:<tag or commit>` from `https://jitpack.io`.
-
 Declare it in your `plugin.yml`:
 
 ```yaml
